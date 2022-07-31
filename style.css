@@ -1,5 +1,8 @@
 /* TODO: 보기 좋은 나만의 아고라 스테이츠를 위해서 CSS를 수정하세요. */
 
+/*flex grow로 이미지 부분이랑 체크박스에 고정값 할당하고, 텍스트 부분에서 space between 해보기*/
+/*제목에 width 값으로 space between?*/
+
 * {
     box-sizing: border-box; /*모든 요소에 border-box를 적용합니다.*/
     padding: 0;
@@ -44,6 +47,7 @@
     font-size: var(--t1);
     margin: 10px;
     background-color: #edfbfc;
+    outline-color: #788bff;
   }
 
   textarea::placeholder {color:#ccc;}
@@ -56,6 +60,7 @@
     font-size: var(--t1);
     margin: 10px;
     background-color: #e2fdff;
+    outline-color: #788bff;
   }
 
   .form__submit input{
@@ -69,10 +74,9 @@
     background-color: #bfd7ff;
   }
 
-
   li.discussion__container{
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
     width: 540px;
     list-style: none; /*<li>요소의 기본 스타일인 점을 보이지 않게 합니다.*/
@@ -96,6 +100,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1 0 0;  /* space between 적용 */
     margin: 20px;
   }
 
@@ -103,17 +108,37 @@
   .discussion__content > a{ 
     text-decoration: none;
     margin-bottom: 30px;
-    font-size: 20px;
+    font-weight: bold;
   }
 
   .discussion__content > div{
-    display: flex;
-    justify-content: flex-end;
+    text-align: right;
     font-size: 12px;
   }
 
   .discussion__answered{
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-right: 20px;
+  }
+
+  button{
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: #788bff;
+    margin: 20px 50px 20vh 50px;
+    padding: 6px 10px;
+    box-shadow: 0 3px 3px #4759d3;
+    border-radius: 50%;
+    transition-duration: 0.3s;
+  }
+
+  button:hover{
+    box-shadow: 0 0 0 #4759d3;
+    background-color: #4759d3;
   }
